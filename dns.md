@@ -22,3 +22,10 @@ TTL（Time To Live）是该记录的生存时间，它决定了资源记录应�
 - 若 Type = NS，则 Name 是个域（如 foo.com），而 Value 是个知道如何获得该域中主机 IP 地址的权威 DNS 服务器的主机名。这个记录用于沿着查询链来路要 DNS 查询。例如 (foo.com, dns.foo.com, NS) 就是一条类型为 NS 的记录。
 - 若 Type = CNAME，则 Value 是别名为 Name 的主机对应的规范主机名。该记录能够向查询的主机提供一个主机名对应的规范主机名，例如 (foo.com, relay1.bar.foo.com, CNAME) 就是一条 CNAME 类型的记录。
 - 若 Type = MX，则 Value 是个别名为 Name 的邮件服务器的规范主机名。举例来说，(foo.com, mail.bar.foo.com, MX) 就是一条 MX 记录。MX 记录允许邮件服务器主机名具有简单的别名。值得注意的是，通过使用 MX 记录，一个公司的邮件服务器和其他服务器（如它的 Web 服务器）可以使用相同的别名。为了获得邮件服务器的规范主机名，DNS 客户应当请求一条 MX 记录；而为了获得其他服务器的规范主机名，DNS 客户应当请求 CNAME 记录。
+
+
+## dns缓存（前端）
+1. 浏览器缓存（ttl和dns ttl无关，chrome是1分钟）
+2. OS DNS缓存（ttl参考dns ttl）
+3. 路由器缓存
+4. 运营商缓存
