@@ -27,8 +27,9 @@ TTL（Time To Live）是该记录的生存时间，它决定了资源记录应�
 ## dns缓存（前端）
 1. 浏览器缓存（ttl和dns ttl无关，chrome是1分钟）
 2. OS DNS缓存（ttl参考dns ttl）
-3. 路由器缓存
-4. 运营商缓存
+3. 本地HOSTS文件
+4. 路由器缓存
+5. 运营商缓存（联通、电信）
 
 ## dns-prefetch
 手动指定dns预解析
