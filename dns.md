@@ -29,3 +29,19 @@ TTL（Time To Live）是该记录的生存时间，它决定了资源记录应�
 2. OS DNS缓存（ttl参考dns ttl）
 3. 路由器缓存
 4. 运营商缓存
+
+## dns-prefetch
+手动指定dns预解析
+```
+<link rel="dns-prefetch" href="//baidu.com">
+```
+
+自动解析，https默认没开启
+```
+// 开启DNS Prefetch
+<meta http-equiv="x-dns-prefetch-control" content="on">
+
+// 关闭DNS Prefetch
+<meta http-equiv="x-dns-prefetch-control" content="off">
+```
+浏览器会把dns缓存在系统dns缓存中
