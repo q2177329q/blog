@@ -7,6 +7,7 @@
 - async执行顺序和DOM 解析完毕与否、DOMContentLoaded触发与否无关，defer会在DOM 解析完毕，DOMContentLoaded之前执行
 
 ## 动态插入脚本
+- 和DOMContentLoaded没有关系
 - 默认行为如async
 - async设置为false后和defer一样
 
