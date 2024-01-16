@@ -20,6 +20,9 @@
 
 - `eslint-plugin-prettier`让 ESLint 和 Prettier 更好地协同工作。
 
+```
+yarn add --dev @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-airbnb eslint-config-airbnb-base eslint-config-prettier eslint-import-resolver-alias eslint-plugin-jsx-a11y eslint-plugin-prettier prettier
+```
 ## 二、.eslintrc.js 配置
 
 下面是我们在 .eslintrc.js 文件中的配置，具体解释如下：
@@ -48,6 +51,49 @@ module.exports = {
   plugins: ['jsx-a11y', '@typescript-eslint', 'prettier'], // 使用的插件
   rules: {
     // 具体的规则配置...
+    'prettier/prettier': [
+      'error',
+      {},
+      {
+        usePrettierrc: true,
+      },
+    ],
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    'react/prop-types': 'off',
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        ts: 'never',
+        tsx: 'never',
+        js: 'never',
+        jsx: 'never',
+        mjs: 'never',
+      },
+    ],
+    // 'keyword-spacing': [
+    //   'error',
+    //   {
+    //     overrides: {
+    //       if: { after: false },
+    //     },
+    //   },
+    // ],
+    'jsx-a11y/click-events-have-key-events': ['off'],
+    camelcase: ['off', { properties: 'never' }],
+    'react/jsx-filename-extension': [
+      'error',
+      {
+        extensions: ['.js', '.jsx', '.tsx', '.ts'],
+      },
+    ],
+    'react/require-default-props': 'off',
+    '@typescript-eslint/no-namespace': 'off',
+    'no-underscore-dangle': 'off',
+    'func-names': 'off',
+    'no-console': ['error', { allow: ['warn', 'error'] }],
+    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    'react/jsx-one-expression-per-line': 'off',
   },
   settings: {
     react: {
@@ -55,6 +101,17 @@ module.exports = {
     },
   },
 };
+```
+
+## 三、.prettierrc配置如下
+```
+{
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "requirePragma": false,
+  "arrowParents": "always",
+  "eslintIntegration": true
+}
 ```
 
 ## 三、VSCode 插件安装
